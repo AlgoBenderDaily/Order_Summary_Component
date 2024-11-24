@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --BODY-BG: #e0e8ff;
+  --CARD-BG: #fff;
+  --BODY-TEXT: #717fa6;
+  --HEADING-TEXT: #1f2e55;
+  --PLAN-CARD-BG: #f7f9ff;
+  --CHANGE-PLAN: #382ae1;
+  --PRIMARY-BTN-BG: #382ae1;
+  --PRIMARY-BTN-TEXT: #fff;
+  --SECONDARY-BTN-TEXT: #717fa6;
+
+  /* TYPOGRAPHY */
+  --FF: "Red Hat Display", sans-serif;
+
+  /* MOBILE */
+  --HEADING: 900 1.375rem var(--FF);
+  --BODY: 500 0.9375rem/1.5625rem var(--FF);
+  --LABEL: 900 0.875rem var(--FF);
+  --PRICE: 500 0.875rem var(--FF);
+  --CHANGE-BUTTON: bold 0.8125rem var(--FF);
+  --BUTTON: 900 0.9375rem var(--FF);
+
+  /* DESKTOP */
+  --HEADING-DSK: 900 1.75rem var(--FF);
+  --BODY-DSK: 500 1rem/1.625rem var(--FF);
+  --LABEL-DSK: 900 1rem var(--FF);
+  --PRICE-DSK: 500 1rem var(--FF);
+  --CHANGE-BUTTON-DSK: bold 0.875rem var(--FF);
+
+  /* SHADOWS */
+  --PRIMARY-BTN-SHADOW: 0px 20px 20px 0px hsla(245, 75%, 52%, 0.1903);
+  --CARD-SHADOW: 0px 40px 40px -20px hsla(228, 87%, 40%, 0.1518);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -625rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  place-content: center;
+
+  background-color: var(--BODY-BG);
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% 27.36%;
+}
+
+/* || ORDER-SUMMARY */
+.order-sumary {
+  max-width: 327px;
+  min-height: 567px;
+  background-color: var(--CARD-BG);
+  border-radius: 20px;
+  box-shadow: var(--CARD-SHADOW);
+  margin: 4.4375rem auto;
+  overflow: hidden;
+}
+
+/* || ORDER-SUMMARY-HEADER */
+.order-summary__header {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 2rem;
+}
+
+.order-summary__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* || ORDER-SUMMARY-CONTENT */
+.order-summary__content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0px 1.5rem 2rem 1.5rem;
+}
+
+/* || ORDER-SUMMARY-TEXT-CONTENT */
+.order-summary__text-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-summary__title {
+  font: var(--HEADING);
+  color: var(--HEADING-TEXT);
+}
+
+.order-summary__description {
+  color: var(--BODY-TEXT);
+  font: var(--BODY);
+  max-width: 263px;
+}
+
+/* || ORDER-SUMMARY-PLAN */
+.order-summary__plan {
+  width: 100%;
+  height: 81px;
+  background-color: var(--PLAN-CARD-BG);
+  border-radius: 11px;
+  padding: 1.0625rem 1rem 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-summary__plan-duration {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.order-summary__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.order-summary__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-summary__plan-label {
+  font: var(--LABEL);
+  color: var(--HEADING-TEXT);
+  margin-bottom: 0.1875rem;
+}
+
+.order-summary__plan-price {
+  font: var(--PRICE);
+  color: var(--BODY-TEXT);
+}
+
+.order-summary__plan-change {
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--CHANGE-PLAN);
+  font: var(--CHANGE-BUTTON);
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  text-decoration-color: var(--CHANGE-PLAN);
+}
+
+/* || ORDER-SUMMARY-BUTTONS */
+.order-summary__buttons {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.order-summary__button {
+  font: var(--BUTTON);
+}
+
+.order-summary__button--primary {
+  background-color: var(--PRIMARY-BTN-BG);
+  color: var(--PRIMARY-BTN-TEXT);
+  padding: 0.9375rem 4.0625rem;
+  border-radius: 11px;
+  border: none;
+  outline: none;
+  box-shadow: var(--PRIMARY-BTN-SHADOW);
+  width: 100%;
+  height: 50px;
+}
+
+.order-summary__button--secondary {
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--BODY-TEXT);
+  border: none;
+  outline: none;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url("./images/pattern-background-desktop.svg");
+    background-size: 100% 48.56%;
+  }
+
+  /* || ORDER-SUMMARY */
+  .order-sumary {
+    max-width: 450px;
+    min-height: 697px;
+    margin: 6.375rem auto;
+  }
+
+  /* || ORDER-SUMMARY-HEADER */
+  .order-summary__header {
+    height: 220px;
+    margin-bottom: 2.8125rem;
+  }
+
+  .order-summary__header img {
+    width: 450px;
+    height: 220px;
+  }
+
+  /* || ORDER-SUMMARY-TEXT-CONTENT */
+  .order-summary__text-content {
+    gap: 1.0625rem;
+  }
+
+  .order-summary__title {
+    font: var(--HEADING-DSK);
+  }
+
+  .order-summary__description {
+    font: var(--BODY-DSK);
+    max-width: 354px;
+  }
+
+  /* || ORDER-SUMMARY-PLAN */
+  .order-summary__plan {
+    height: 98px;
+    padding: 1.5625rem 1.5rem;
+  }
+
+  .order-summary__plan-label {
+    font: var(--LABEL-DSK);
+    margin-bottom: 6px;
+  }
+
+  .order-summary__plan-price {
+    font: var(--PRICE-DSK);
+  }
+
+  .order-summary__plan-change {
+    font: var(--CHANGE-BUTTON-DSK);
+  }
+
+  /* || ORDER-SUMMARY-BUTTONS */
+  .order-summary__buttons {
+    gap: 2rem;
+  }
+
+  .order-summary__button--primary {
+    padding: 0.9375rem 6.375rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .order-summary__plan-change:hover,
+  .order-summary__plan-change:focus-visible {
+    color: #766cf1;
+  }
+
+  .order-summary__button--primary:hover,
+  .order-summary__button--primary:focus-visible {
+    background-color: #766cf1;
+  }
+
+  .order-summary__button--secondary:hover,
+  .order-summary__button--secondary:focus-visible {
+    color: var(--HEADING-TEXT);
+  }
+}

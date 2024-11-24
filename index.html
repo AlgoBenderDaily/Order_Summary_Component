@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nkosinathi Manu Dhanda" />
+    <meta name="description" content="This is an Order Summary Component" />
+    <title>Order Summary Component</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <article class="order-sumary">
+      <section class="order-summary__header">
+        <figure>
+          <img
+            src="./images/illustration-hero.svg"
+            alt="illustration-hero"
+            width="450"
+            height="220"
+            loading="lazy"
+          />
+          <figcaption class="offscreen">illustration-hero</figcaption>
+        </figure>
+      </section>
+
+      <section class="order-summary__content">
+        <section class="order-summary__text-content">
+          <h1 class="order-summary__title">Order Summary</h1>
+          <p class="order-summary__description center">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+        </section>
+
+        <section class="order-summary__plan">
+          <div class="order-summary__plan-duration">
+            <div class="order-summary__icon">
+              <figure>
+                <img
+                  src="./images/icon-music.svg"
+                  alt="icon-music"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+                <figcaption class="offscreen">icon-music</figcaption>
+              </figure>
+            </div>
+
+            <div class="order-summary__label-price">
+              <p class="order-summary__plan-label nowrap">Annual Plan</p>
+              <p class="order-summary__plan-price nowrap">&dollar;59.99/year</p>
+            </div>
+          </div>
+
+          <button onclick="changePlan()" class="order-summary__plan-change">
+            Change
+          </button>
+        </section>
+
+        <section class="order-summary__buttons">
+          <button
+            onclick="addPayment()"
+            class="order-summary__button order-summary__button--primary center nowrap"
+          >
+            Proceed to Payment
+          </button>
+
+          <button
+            onclick="cancelPayment()"
+            class="order-summary__button order-summary__button--secondary center nowrap"
+          >
+            Cancel Order
+          </button>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>
